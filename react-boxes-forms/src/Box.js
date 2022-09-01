@@ -1,9 +1,16 @@
 
-function Box({ height, width, backgroundColor }) {
-  const style = { height, width, backgroundColor };
-
+function Box({ height, width, backgroundColor, removeBox }) {
+  const style = {
+    height: `${height}px`,
+    width: `${width}px`,
+    backgroundColor
+  };
+  console.log("STYLE", style);
   return (
-    <div style={style}></div>
+    <div>
+      <div style={style}></div>
+      <button>  </button>
+    </div>
   );
 
 }
