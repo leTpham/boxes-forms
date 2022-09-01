@@ -1,5 +1,13 @@
 import { useState } from 'react';
 
+
+/** Form for creating a new box to add to a list of boxes.
+ *
+ * Has state for height, width, background color of the box; on submission,
+ * sends {height, width, backgroundColor} to fn rec'd from parent.
+ *
+ * BoxList -> NewBoxForm
+ */
 function NewBoxForm({ addBox }) {
   const initialState = {
     height: "",
