@@ -30,14 +30,14 @@ function BoxList() {
     }
 
 
-
+//destructure box in map funciton
     function renderBoxes() {
         return (
             <div>
                 <ul>
+
                     {boxList.map(box =>
                         <li key={box.id} ><Box
-                            id={box.id}
                             height={box.height}
                             width={box.width}
                             backgroundColor={box.backgroundColor}
