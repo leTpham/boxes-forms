@@ -1,15 +1,14 @@
 
-function Box({ height, width, backgroundColor, removeBox }) {
+function Box({ height, width, backgroundColor, removeBox, id }) {
   const style = {
     height: `${height}px`,
     width: `${width}px`,
     backgroundColor
   };
-  console.log("STYLE", style);
   return (
     <div>
       <div style={style}></div>
-      <button>  </button>
+      <button onClick = {() => removeBox(id)}>x</button>
     </div>
   );
 

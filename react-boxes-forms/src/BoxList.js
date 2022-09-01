@@ -4,16 +4,17 @@ import NewBoxForm from './NewBoxForm'
 import { v4 as uuid } from 'uuid';
 
 function BoxList() {
-    const [boxList, setBoxList] = useState([{
-        height: "200",
+    const [boxList, setBoxList] = useState([
+    {height: "200",
         width: "200",
         backgroundColor: 'red',
-        id: uuid()
-    }]);
+        id: uuid()}
+    ]);
 
     //TODO: function to remove box from List, pass it as prop to Box component
-    function removeBox() {
-
+    function removeBox(id) {
+        setBoxList(curr =>
+                curr.filter(b => b.id !== id))
     }
 
     //TODO: function to add a new box
@@ -29,11 +30,13 @@ function BoxList() {
             <div>
                 <ul>
                     {boxList.map(box =>
-                        <li key={box.id}><Box
+                            <li key={box.id} ><Box
+                            id={box.id}
                             height={box.height}
                             width={box.width}
                             backgroundColor={box.backgroundColor}
-                            removeBox={removeBox} />
+                            removeBox={() => removeBox(box.id)}
+                            />
                         </li>)}
                 </ul>
             </div >
